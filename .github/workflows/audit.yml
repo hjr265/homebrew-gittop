@@ -1,0 +1,21 @@
+name: Brew Audit
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  audit:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Tap local formula
+        run: |
+          mkdir -p "$(brew --repository)/Library/Taps/hjr265/homebrew-gittop"
+          cp -r . "$(brew --repository)/Library/Taps/hjr265/homebrew-gittop"
+
+      - name: Run brew audit
+        run: brew audit --strict gittop
