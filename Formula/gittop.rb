@@ -9,6 +9,7 @@ class Gittop < Formula
 
   def install
     ENV["GOTOOLCHAIN"] = "auto"
+    ENV["CGO_ENABLED"] = "0"
     system "go", "build", *std_go_args(ldflags: "-s -w")
   end
 
