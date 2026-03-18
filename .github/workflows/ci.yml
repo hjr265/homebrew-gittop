@@ -1,4 +1,4 @@
-name: Brew Audit
+name: CI
 
 on:
   push:
@@ -19,3 +19,19 @@ jobs:
 
       - name: Run brew audit
         run: brew audit --strict gittop
+
+  install:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Tap local formula
+        run: |
+          mkdir -p "$(brew --repository)/Library/Taps/hjr265/homebrew-gittop"
+          cp -r . "$(brew --repository)/Library/Taps/hjr265/homebrew-gittop"
+
+      - name: Install formula
+        run: brew install gittop
+
+      - name: Test formula
+        run: brew test gittop
