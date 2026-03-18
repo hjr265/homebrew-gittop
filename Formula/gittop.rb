@@ -1,8 +1,8 @@
 class Gittop < Formula
   desc "Beautiful terminal UI for visualizing Git repository statistics"
   homepage "https://github.com/hjr265/gittop"
-  url "https://github.com/hjr265/gittop/archive/refs/tags/v0.2.0.tar.gz"
-  sha256 "cf3655145dcb93f5946e2f778bef264c9194dbc58daad1f41c97ed364764414f"
+  url "https://github.com/hjr265/gittop/archive/refs/tags/v0.3.0.tar.gz"
+  sha256 "86eb8de005ec2e708c2508ce6ebc61bf8f62e11f92b9154eda15f99f1e995072"
   license "BSD-3-Clause"
 
   depends_on "go" => :build
