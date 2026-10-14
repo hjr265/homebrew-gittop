@@ -12,5 +12,6 @@ Or tap first:
 
 ```sh
 brew tap hjr265/gittop
+brew trust hjr265/gittop
 brew install gittop
 ```

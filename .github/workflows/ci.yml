@@ -17,6 +17,9 @@ jobs:
           mkdir -p "$(brew --repository)/Library/Taps/hjr265/homebrew-gittop"
           cp -r . "$(brew --repository)/Library/Taps/hjr265/homebrew-gittop"
 
+      - name: Trust tap
+        run: brew trust hjr265/gittop
+
       - name: Run brew audit
         run: brew audit --strict gittop
 
@@ -29,6 +32,9 @@ jobs:
         run: |
           mkdir -p "$(brew --repository)/Library/Taps/hjr265/homebrew-gittop"
           cp -r . "$(brew --repository)/Library/Taps/hjr265/homebrew-gittop"
+
+      - name: Trust tap
+        run: brew trust hjr265/gittop
 
       - name: Install formula
         run: brew install gittop
